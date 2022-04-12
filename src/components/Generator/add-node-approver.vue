@@ -60,10 +60,11 @@
             </button>
           </div>
           <div
-            class="ant-row-flex ant-row-flex-space-around ant-row-flex-middle condition-group"
+            class="ant-row-flex ant-row-flex-space-around ant-row-flex-middle condition-group newFormFont"
             v-for="(item, index) in properties1.actionerRules"
             :key="index"
           >
+          <img src="../../assets/icon/delect.png" class="delect" @click.stop="delectList()" alt="">
             角色名&nbsp;&nbsp;
             <div
               class="ant-select ant-select-enabled"
@@ -213,7 +214,7 @@ export default {
           isEmpty: false,
           autoUp: true,
           actType: "or",
-          needSameDept: null,
+          needSameDept: 0,
         },
       ],
     },
@@ -266,14 +267,6 @@ export default {
         alert("角色不能为空");
         return;
       }
-      if (
-        this.properties1.actionerRules.some((e) => {
-          return !e?.needSameDept;
-        })
-      ) {
-        alert("请选择是否同部门");
-        return;
-      }
 
       // var rule = this.properties1.actionerRules[0];
       // switch (rule.type) {
@@ -318,7 +311,7 @@ export default {
             isEmpty: false,
             memberCount: 1,
             actType: "or",
-            needSameDept: null,
+            needSameDept: 0,
           });
           break;
         default:
@@ -335,10 +328,14 @@ export default {
         isEmpty: false,
         memberCount: 1,
         actType: "or",
-        needSameDept: null,
+        needSameDept: 0,
       });
+      this.properties1.actionerRules = [...new Set(this.properties1.actionerRules)]
       this.showAddRole = true;
     },
+    delectList(){
+      this.properties1.actionerRules.pop()
+    }
   },
 };
 </script>

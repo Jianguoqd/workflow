@@ -50,11 +50,11 @@
       <div
         class="dingflow-design"
       >
-        <div class="zoom">
+        <!-- <div class="zoom">
           <div class="zoom-out" />
           <span>100%</span>
           <div class="zoom-in" />
-        </div>
+        </div> -->
         <div class="ie-polyfill-container">
           <div
             id="box-scale"

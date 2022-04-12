@@ -1407,6 +1407,12 @@ handler-wrap .ant-input-number-handler .ant-input-number-handler-up-inner {
 .newClose{
   padding-top: 3px;
 }
+.newFormFont{
+  font-size: 16px;
+}
+.delect{
+  max-width: 20px;
+}
 .approver-type-wrapper .approver-actions {
   position: relative;
   padding: 5px 0 7px;
